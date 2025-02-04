@@ -1,0 +1,58 @@
+## Ignore build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]istro/
+[Dd]ebug/
+[Dd]ebugPublic/
+
+# Ignore obj folder
+[Oo]bj/
+[Bb]in/
+
+
+## Ignore packages
+[Dd]ependency/
+packages/
+
+## User-specific files
+.idea/
+.vscode/
+.vs/
+
+## ASP.NET Scaffolding
+Scaffolding/
+
+## Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+## Windows Installer files
+Thumbs.db
+ehthumbs.db
+
+## JetBrains Rider
+.idea/
+
+## User-specific files
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# .NET Core files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# User-specific files
+.vs2019/
+.vs2017/
