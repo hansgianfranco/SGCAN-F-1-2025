@@ -1,0 +1,30 @@
+# Ignorar node_modules (se instalarán dentro del contenedor)
+node_modules
+
+# Ignorar la carpeta de builds (si ya está construido localmente)
+.next
+dist
+build
+
+# Ignorar archivos de desarrollo y configuración local
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.DS_Store
+.git
+.gitignore
+.vscode
+.idea
+
+# Ignorar logs y archivos temporales
+npm-debug.log
+yarn-error.log
+*.log
+*.tmp
+*.swp
+
+# Ignorar archivos de dependencias (opcional)
+package-lock.json
+yarn.lock
