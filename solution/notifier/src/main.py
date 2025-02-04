@@ -7,7 +7,7 @@ app = FastAPI()
 async def notify(email: str):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("hansgianfranco@gmail.com", "")
+    server.login("hansgianfranco@gmail.com", "yjtphinhgmmnkfmy")
     server.sendmail("hansgianfranco@gmail.com", email, "Su archivo ha sido procesado.")
     server.quit()
     return {"status": "notification sent"}

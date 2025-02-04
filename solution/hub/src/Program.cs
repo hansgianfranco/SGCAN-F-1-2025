@@ -4,8 +4,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Hub.Data;
 using Hub.Services;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient();
 
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -47,10 +50,18 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+var redisConnectionString = builder.Configuration.GetValue<string>("Redis:ConnectionString");
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
+
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IQueueService, QueueService>();
 
 builder.Services.AddControllers();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

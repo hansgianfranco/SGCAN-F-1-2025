@@ -26,7 +26,7 @@ namespace Hub.Controllers
         public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
             var result = await _authService.Login(loginDTO);
-            return Ok(new { message = result });
+            return Ok(new { token = result });
         }
     }
 }

@@ -1,7 +1,7 @@
-namespace Hub.Services
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+public interface IQueueService
 {
-    public interface IQueueService
-    {
-        Task Enqueue(string message);
-    }
+    Task ProcessLinks(List<string> links, string email);
 }
